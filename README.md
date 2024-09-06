@@ -1,4 +1,4 @@
-# Credit Card Scanner
+# Local Credit Card Scanner (by TH)
 
 A React-based credit card scanner built with Next.js and integrated with `react-webcam`, `Tesseract.js` (for OCR), and `card-validator` (for credit card validation). This app captures images via webcam, extracts credit card numbers and expiration dates, and validates the information.
 
