@@ -1,0 +1,373 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #000000;
+  --background-start: #8371F1;
+  --background-end: #9bc2ee;
+  /*Change Swiper Arrow Colors */
+  --swiper-navigation-color: black;
+  --swiper-pagination-color: black;
+  --swiper-pagination-bottom: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #000000;
+    --background-start: #8371F1;
+    --background-end: #b3c6fa;
+  }
+}
+
+
+@layer base {
+  body {
+    font-size: 16px;
+
+    @screen md {
+      font-size: 17px;
+    }
+
+    @screen lg {
+      font-size: 25px;
+    }
+
+    font-family: 'Manrope',
+    sans-serif;
+    color: var(--foreground);
+    background-image: linear-gradient(to bottom right, var(--background-start), var(--background-end));
+
+  }
+
+  p {
+    @apply text-lg font-poppins;
+    /* Apply Poppins to <p> elements */
+  }
+
+  input {
+    @apply font-poppins text-lg;
+  }
+
+
+}
+
+
+@layer components {
+
+
+  .btn-white {
+    @apply w-[140px] h-[50px] sm:w-[194px] sm:h-[64px] text-black text-sm sm:text-base font-medium font-poppins rounded-full border-2 hover:bg-[#9747FF] hover:text-white transition-colors duration-300 hover:border-0 border-black px-3 py-2;
+  }
+
+  .btn-black {
+    @apply w-[140px] h-[50px] sm:w-[194px] sm:h-[64px] text-sm sm:text-base border-none font-medium font-poppins rounded-full hover:bg-[#9747FF] transition-colors duration-300 hover:border-0 text-white bg-black px-3 py-2;
+  }
+
+  .gags {
+    @apply w-[30%] bg-gray-400 bg-opacity-5 aspect-square rounded-xl shadow-xl px-2 py-4 m-1 md:m-3 lg:m-3 text-center flex flex-col justify-evenly items-center;
+  }
+
+
+  .swiper {
+    @apply h-full w-ful;
+  }
+
+  .swiper-slide {
+    width: 80%;
+  }
+
+
+
+
+}
+
+
+
+
+@layer utilities {
+
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-border {
+    -webkit-text-stroke: 2.5px black;
+    /* Border width and color */
+    color: transparent;
+  }
+
+  .text-border-purple {
+    -webkit-text-stroke: 2px #7A65F8;
+    /* Border width and color */
+    color: transparent;
+  }
+
+  .no-grainy {
+    z-index: 1;
+  }
+
+  .grainy {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grainy:before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+    opacity: 0.57;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .shadow-wrapper {
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background: transparent;
+  }
+
+  .shadow-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    border-radius: 2rem;
+    /* Match the border-radius of the images */
+  }
+
+
+  .blob2 {
+    position: absolute;
+    opacity: 0.5;
+    width: 85%;
+    aspect-ratio: 1/1;
+    /* animation: animateBlob2 10s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate forwards; */
+    filter: blur(40px);
+    z-index: -1;
+    background: radial-gradient(ellipse at top, #6b62b9, transparent),
+      radial-gradient(ellipse at bottom, #701c70, transparent);
+  }
+
+  .blob3 {
+    position: absolute;
+    opacity: 0.5;
+    width: 55%;
+    aspect-ratio: 1/1;
+    /* animation: animateBlob2 15s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate forwards; */
+    filter: blur(40px);
+    z-index: -1;
+    background: radial-gradient(ellipse at top, #6b62b9, transparent),
+      radial-gradient(ellipse at bottom, #701c70, transparent);
+  }
+
+  .swiper-pagination {
+    margin-top: 20px;
+  }
+
+}
+
+@keyframes animateBlob2 {
+  0% {
+    transform: translate(-25%, 29%) rotate(-60deg) scale(1.05) aspect-ratio(1/1.2);
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+  }
+
+  50% {
+    transform: translate(0%, 13%) rotate(41deg) scale(1.15) aspect-ratio(1.2/1);
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+  }
+
+  100% {
+    transform: translate(30%, -22%);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+}
+
+
+
+
+
+@font-face {
+  font-family: 'Manrope';
+  /* Replace with your font's name */
+  src: url('/fonts/Manrope-ExtraLight.ttf') format('ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  /* Replace with your font's name */
+  src: url('/fonts/Manrope-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  /* Replace with your font's name */
+  src: url('/fonts/Manrope-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  /* Replace with your font's name */
+  src: url('/fonts/Manrope-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  /* Replace with your font's name */
+  src: url('/fonts/Manrope-SemiBold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  /* Replace with your font's name */
+  src: url('/fonts/Manrope-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  /* Replace with your font's name */
+  src: url('/fonts/Manrope-ExtraBold.ttf') format('ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
