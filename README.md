@@ -68,11 +68,8 @@ A React-based credit card scanner built with Next.js and integrated with `react-
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 
-## Future Improvements
 
-- Add support for detecting CVV numbers.
-- Implement real-time feedback during scanning.
-- Improve OCR accuracy and performance.
+
 
 ## License
 
