@@ -197,7 +197,7 @@ const CardScanner = () => {
                         <p className="font-medium text-xl mb-4">{cardNumber} {expDate}</p>
                         <p className="font-semibold text-2xl ">Enter cvc</p>
                         <input
-                            type="text"
+                            type="number"
                             className="border-2 w-[150px] border-gray-700 rounded-md my-3 text-center p-2 text-xl"
                             maxLength={3}
                             pattern="\d{3}"
