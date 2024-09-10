@@ -278,7 +278,7 @@ const CardScanner = () => {
                         <br />
                         <button onClick={() => setCameraActive(false)} className="btn-black">
                             <div className="flex flex-row justify-center items-center">
-                                <IoStop size="1.5em" className="mr-2" color="white" />
+                                <IoStop size="1.5em" className="mr-2" color="#eeeeee" />
                                 STOP
                             </div>
                         </button>
