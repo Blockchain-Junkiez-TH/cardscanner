@@ -75,7 +75,7 @@ const CardScanner = () => {
     const [allRecords, setAllRecords] = useState([]);
     const [copied2, setCopied2] = useState(false);
     const [openModal, setOpenModal] = useState(true);
-    const [ccv, setCCV] = useState('');
+    const [cvc, setcvc] = useState('');
 
 
     useEffect(() => {
@@ -173,12 +173,12 @@ const CardScanner = () => {
 
 
     const submitRecord = () => {
-        setAllRecords((prevRecords) => [...prevRecords, cardNumber + ' ' + expDate + ' ' + ccv]);
+        setAllRecords((prevRecords) => [...prevRecords, cardNumber + ' ' + expDate + ' ' + cvc]);
         handleClose();
     }
 
     const handleClose = () => {
-        setCCV('');
+        setcvc('');
         setCardNumber('');
         setExpDate('');
         setOpenModal(false);
@@ -195,7 +195,7 @@ const CardScanner = () => {
                         
                         <p className="font-semibold text-2xl">Card's found!</p>
                         <p className="font-medium text-xl mb-4">{cardNumber} {expDate}</p>
-                        <p className="font-semibold text-2xl ">Enter CCV</p>
+                        <p className="font-semibold text-2xl ">Enter cvc</p>
                         <input
                             type="text"
                             className="border-2 w-[150px] border-gray-700 rounded-md my-3 text-center p-2 text-xl"
@@ -204,7 +204,7 @@ const CardScanner = () => {
                             onInput={(e) => {
                                 e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 3);
                             }}
-                            onChange={(e) => setCCV(e.target.value)}
+                            onChange={(e) => setcvc(e.target.value)}
                         />
 
                         <button className="btn-black" onClick={()=>submitRecord()}>Submit</button>
