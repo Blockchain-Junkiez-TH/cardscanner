@@ -189,7 +189,7 @@ const CardScanner = () => {
 
             {cardNumber && expDate && (
                 <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-md z-50 flex items-center justify-center">
-                    <div className="border-2 rounded-xl text-center border-gray-700 bg-violet-700 relative w-fit p-4 flex flex-col justify-center items-center">
+                    <div className="border-2 rounded-xl text-center border-gray-700 bg-[#8371F1] relative w-fit p-4 flex flex-col justify-center items-center">
                         <button className="absolute top-2 right-2" onClick={() => handleClose()}><IoMdClose /></button>
 
                         
