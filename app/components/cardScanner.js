@@ -173,6 +173,11 @@ const CardScanner = () => {
 
 
     const submitRecord = () => {
+        // only allow 3 digit cvc
+        if (cvc.length !== 3 || !/^\d{3}$/.test(cvc)) {
+            
+            return;
+        }
         setAllRecords((prevRecords) => [...prevRecords, cardNumber + ' ' + expDate + ' ' + cvc]);
         handleClose();
     }
