@@ -158,7 +158,7 @@ const CardScanner = () => {
     useEffect(() => {
         if (cameraActive && !captureInterval) {
 
-            const interval = setInterval(capture, 1000); // Keep capturing every 800ms
+            const interval = setInterval(capture, 700); // Keep capturing every 800ms
             setCaptureInterval(interval);
         }
         return () => {
