@@ -294,7 +294,7 @@ const CardScanner = () => {
 
             {allRecords.length > 0 && (
                 <div>
-                    <h2 onClick={copyText2} className="mt-5 text-xl font-bold w-full flex flex-row text-center justify-center items-center">
+                    <h2 onClick={copyText2} className="mt-5 mb-3 text-xl font-bold w-full flex flex-row text-center justify-center items-center">
                         <MdDeleteOutline size="1.3em" onClick={() => setAllRecords([])} />
                         All Records
                         {copied2 ? <FaRegCheckCircle size="1em" className="ml-2" color="green" /> : <FaRegCopy size="1em" className="ml-2 mr-8" />}
